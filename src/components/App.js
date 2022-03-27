@@ -28,6 +28,7 @@ const App = () => {
 
   useEffect(() => {
     if(userInput === ''){
+      setTempData(defResponse);
       document.querySelector('.clear-search-btn').style.display="none";
       document.querySelector('#search-input').focus();
 

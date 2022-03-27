@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { SortingByDate } from './utils';
 
 const Customers = ({ customersList, setData }) => {
    const [sortOption, setSortOption] = useState(false);
@@ -19,6 +18,67 @@ const Customers = ({ customersList, setData }) => {
    }
 
 
+   const sortingByDate = (sort) => {
+      if (sort === "ASC") {
+         let jsonParse = customersList.map((item) => ({
+            ...item,
+            date: Date.parse(item.date.split("/").reverse().join("-")),
+         }));
+         
+         let newList = jsonParse.sort((a, b) => a.date - b.date).map((item) => {
+            let dateFormat = changeToDate(item.date).split("/").map((n) => {
+               let num = parseInt(n);
+
+               if (num < 10) {
+                  return "0" + n;
+               } else {
+                  return n + "";
+               }
+            }); 
+   
+            item.date = dateFormat.join("/");
+            return item;
+         });
+         // console.log(newList);
+         setData(newList);
+
+      } else if (sort === "DES") {
+         let jsonParse = customersList.map((item) => ({
+            ...item,
+            date: Date.parse(item.date.split("/").reverse().join("-")),
+         }));
+
+         let newList = jsonParse.sort((a, b) => b.date - a.date).map((item) => {
+            let dateFormat = changeToDate(item.date).split("/").map((n) => {
+               let num = parseInt(n);
+
+               if (num < 10) {
+                  return "0" + n;
+               } else {
+                  return n + "";
+               }
+            });
+
+            item.date = dateFormat.join("/");
+            return item;
+         });
+         // console.log(newList);
+         setData(newList);
+      }
+   };
+
+   const changeToDate = (timestamp) => {
+   let unix_timestamp = timestamp;
+
+   // Create a new JavaScript Date object based on the timestamp
+   // multiplied by 1000 so that the argument is in milliseconds, not seconds.
+   let date = new Date(unix_timestamp).toLocaleDateString("en-IN");
+
+   // Hours part from the time
+   return date;
+   };
+
+
    return (
       <table className='customers-detail-table'>
          <thead className='customers-detail-row customers-list-headings'>
@@ -32,8 +92,8 @@ const Customers = ({ customersList, setData }) => {
                      sortOption && 
                      (
                         <div className='sort-options'>
-                           <span onClick={() => SortingByDate(customersList, setData, 'ASC')}>Ascending</span>
-                           <span onClick={() => SortingByDate(customersList, setData, 'DES')}>Descending</span>
+                           <span onClick={() => sortingByDate('ASC')}>Ascending</span>
+                           <span onClick={() => sortingByDate('DES')}>Descending</span>
                         </div>
                      )
                   }

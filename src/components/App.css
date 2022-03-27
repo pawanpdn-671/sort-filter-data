@@ -12,9 +12,7 @@ body{
   max-width: 1200px;
   margin: 3rem auto;
 }
-.dashboard{
-  /* border: 1px solid red; */
-}
+
 .dashboard .dashboard-heading{
   font-size: 1.4rem;
   font-weight: 700;
@@ -204,6 +202,7 @@ th.date-order-heading .sort-options span{
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.289);
+  z-index: 999;
 }
 .modal .modal-content{
   background-color: white;
