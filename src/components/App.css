@@ -161,12 +161,24 @@ th.date-order-heading .sort-options span{
   border-bottom: 1px solid rgb(221, 221, 221);
 }
 
+.customers-detail-table tr .customer-name-info{
+  font-size: 0.98rem;
+  font-weight: 400;
+}
+.customers-detail-table tr .address-country-info .country-info{
+  font-weight: 400;
+  font-size: 0.98rem;
+}
 .customers-detail-table tr .address-country-info .address-info{
   margin-top: 0.3rem;
   font-size: 0.9rem;
   color: rgb(123, 123, 123);
   font-weight: 400;
 } 
+.customers-detail-table tr .product-info .product-title-info{
+  font-size: 0.98rem;
+  font-weight: 400;
+}
 .customers-detail-table tr .product-info .product-des-info{
   margin-top: 0.3rem;
   font-size: 0.9rem;
@@ -176,18 +188,38 @@ th.date-order-heading .sort-options span{
 .customers-detail-table tr .date-order-info{
   font-size: 0.95rem;
 }
+.customers-detail-table tr .status-info .status-info-box{
+  font-size: 0.95rem;
+  font-weight: 500;
+}
 
-.customers-detail-table tr .status-info.blue{
+.customers-detail-table tr .status-info .blue{
   color: rgb(16, 192, 211);
+  width: max-content;
+  padding: 0.5rem 0.6rem;
+  border-radius: 0.8rem;
+  background-color: rgb(234, 249, 250);
 }
-.customers-detail-table tr .status-info.green{
+.customers-detail-table tr .status-info .green{
   color: rgb(16, 228, 129);
+  width: max-content;
+  padding: 0.5rem 0.6rem;
+  border-radius: 0.8rem;
+  background-color: rgb(226, 252, 240);
 }
-.customers-detail-table tr .status-info.yellow{
+.customers-detail-table tr .status-info .yellow{
   color: rgb(248, 153, 10);
+  width: max-content;
+  padding: 0.5rem 0.6rem;
+  border-radius: 0.8rem;
+  background-color: rgb(255, 241, 220);
 }
-.customers-detail-table tr .status-info.red{
+.customers-detail-table tr .status-info .red{
   color: rgb(245, 130, 109);
+  width: max-content;
+  padding: 0.5rem 0.6rem;
+  border-radius: 0.8rem;
+  background-color: rgb(253, 228, 224);
 }
 
 

@@ -121,7 +121,9 @@ const Customers = ({ customersList, setData }) => {
                         </td>
 
                         <td className='date-order-info'>{cus.date}</td>
-                        <td className={`status-info ${getStatusColor(cus.status)}`}>{cus.status}</td>
+                        <td className='status-info'>
+                           <p className={`status-info-box ${getStatusColor(cus.status)}`}>{cus.status}</p>
+                        </td>
                      </tr>
                   )
                }) 
