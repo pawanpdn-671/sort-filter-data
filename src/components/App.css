@@ -193,3 +193,61 @@ th.date-order-heading .sort-options span{
 }
 
 
+/* Filter Modal */
+.modal{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.289);
+}
+.modal .modal-content{
+  background-color: white;
+  padding: 2rem;
+  border-radius: 0.2rem;
+}
+.modal-content .option-list-container{
+  display: flex;
+}
+.option-list-container .option-list-container-heading{
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+.modal-content .option-list-container .option-list-items{
+  margin-left: 3rem;
+}
+.option-list-items .option-list-item{
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+.option-list-item input{
+  cursor: pointer;
+}
+.option-list-item label{
+  display: inline-block;
+  margin-left: 0.3rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.modal-content .show-results-btn{
+  margin-top: 3rem;
+  text-align: right;
+}
+.modal-content .show-results-btn button{
+  padding: 0.5rem 0.9rem;
+  border: none;
+  background-color: rgb(16, 192, 211);
+  color: white;
+  outline: none;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 0.9rem;
+  border-radius: 0.2rem;
+
+}

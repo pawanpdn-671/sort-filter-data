@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SortingByDate } from './SortFilter';
+import { SortingByDate } from './utils';
 
 const Customers = ({ customersList, setData }) => {
    const [sortOption, setSortOption] = useState(false);
@@ -73,12 +73,3 @@ const Customers = ({ customersList, setData }) => {
 
 export default Customers;
 
-
-// function sortTheTable(jsonData, sort ){
-
-
-// }
-
-
-
-// console.log(sortTheTable(jsonData, "DES"))

@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import Customers from './Customers';
+import ShowFilterOption from './ShowFilterOption';
 
 const App = () => {
 
   const [defResponse, setDefResponse] = useState([]);
   const [tempData, setTempData] = useState([]);
   const [userInput, setUserInput] = useState('');
+  const [showFilterBox, setShowFilterBox] = useState(false);
 
   const getCustomersList = async() => {
     const data = await fetch('https://my-json-server.typicode.com/Ved-X/assignment/orders');
@@ -25,7 +27,7 @@ const App = () => {
 
 
   useEffect(() => {
-    if(userInput == ''){
+    if(userInput === ''){
       document.querySelector('.clear-search-btn').style.display="none";
       document.querySelector('#search-input').focus();
 
@@ -64,11 +66,15 @@ const App = () => {
             <i className="fa-solid fa-xmark clear-search-btn" onClick={() => setUserInput('')}></i>
           </div>
 
-          <div className='dashboard-filter-container'>
+          <div className='dashboard-filter-container' onClick={() => setShowFilterBox(true)}>
             <i className="fa-solid fa-arrow-down-short-wide"></i>
             <span>Filter</span>
           </div>
         </div>
+
+        {
+          showFilterBox && <ShowFilterOption setShowFilter={setShowFilterBox} data={defResponse} setData={setTempData} />
+        }
 
         <React.Fragment>
           {
